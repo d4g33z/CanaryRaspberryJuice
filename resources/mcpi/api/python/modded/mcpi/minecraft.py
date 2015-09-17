@@ -5,6 +5,7 @@ from block import Block
 import math
 from util import flatten
 
+import numpy as npy
 """ Minecraft PI low level api v0.1_1
 
     Note: many methods have the parameter *arg. This solution makes it
@@ -29,7 +30,8 @@ from util import flatten
 
 
 def intFloor(*args):
-    return [int(math.floor(x)) for x in flatten(args)]
+    return npy.round([x for x in flatten(args)])
+    #return [int(math.floor(x)) for x in flatten(args)]
 
 class CmdPositioner:
     """Methods for setting and getting positions"""
